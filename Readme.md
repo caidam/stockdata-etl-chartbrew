@@ -1,8 +1,8 @@
-![Architecture diagram of the project](https://github.com/caidam/stockdata-etl-chartbrew/blob/main/misc/pipeline-diagram.png)
-
 # Stock Data ETL Dashboard
 
 This project is designed to set up a Docker environment for an end-to-end data engineering project. It includes a [Chartbrew](https://hub.docker.com/r/razvanilin/chartbrew) instance to visualize data. The setup consists of MySQL containers, a Python data fetching container, and a shell script to launch Chartbrew once the MySQL databases are initialized.
+
+![Architecture diagram of the project](https://github.com/caidam/stockdata-etl-chartbrew/blob/main/misc/pipeline-diagram.png)
 
 ## Prerequisites
 
