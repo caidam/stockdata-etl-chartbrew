@@ -1,0 +1,38 @@
+version: '3.8'
+
+networks:
+  chartbrew_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.30.0.0/16
+          gateway: 172.30.0.1
+
+services:
+  mysql-financialdata:
+    image: mysql:8.1.0
+    container_name: mysql-financialdata
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: financialdata
+    networks:
+      chartbrew_network:
+        ipv4_address: 172.30.0.2
+
+  mysql-chartbrewdata:
+    image: mysql:8.1.0
+    container_name: mysql-chartbrewdata
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: chartbrew
+    networks:
+      chartbrew_network:
+        ipv4_address: 172.30.0.3
+
+  stockdata-fetcher:
+    image: python-stockdata-fetcher
+    container_name: stockdata-fetcher
+    networks:
+      chartbrew_network:
+        ipv4_address: 172.30.0.5
