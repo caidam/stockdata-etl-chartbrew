@@ -16,7 +16,7 @@ Before getting started, make sure you have the following prerequisites installed
 The project directory is structured as follows:
 
  ```
-    StockDataETL-Dashboard/
+    stockdata-etl-chartbrew/
     │
     ├── docker-compose.yml
     ├── run-chartbrew-container.sh
