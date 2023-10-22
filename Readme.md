@@ -1,8 +1,8 @@
+![Architecture diagram of the project](https://github.com/caidam/stockdata-etl-chartbrew/blob/main/misc/pipeline-diagram.png)
+
 # Stock Data ETL Dashboard
 
 This project is designed to set up a Docker environment for an end-to-end data engineering project. It includes a [Chartbrew](https://hub.docker.com/r/razvanilin/chartbrew) instance to visualize data. The setup consists of MySQL containers, a Python data fetching container, and a shell script to launch Chartbrew once the MySQL databases are initialized.
-
-![Alt Text](https://github.com/caidam/stockdata-etl-chartbrew/blob/main/misc/stockdataetl-dashboard.png)
 
 ## Prerequisites
 
@@ -27,15 +27,15 @@ The project directory is structured as follows:
         └── requirements.txt
  ```
 
-### `docker-compose.yml`
+### docker-compose.yml
 
 The `docker-compose.yml` file defines the Docker services for your project. It sets up the necessary containers, including MySQL databases and the python script. It also configures the network for communication between containers.
 
-### `run-chartbrew-container.sh`
+### run-chartbrew-container.sh
 
 The `run-chartbrew-container.sh` script helps launching the Chartbrew container with the required environment variables once the MySQL databases are initialized.
 
-### `python_container/`
+### python_container/
 
 The python_container folder contains the Python script and related files:
 
@@ -111,7 +111,9 @@ Then run it :
 
 9. Open Chartbrew's frontend, sign in, connect to `financialdata` and start designing your dashboard.
 
-## Cutsomization
+![Screenshot of the resulting dashboard](https://github.com/caidam/stockdata-etl-chartbrew/blob/main/misc/stockdataetl-dashboard.png)
+
+## Customization
 
 - You can customize the Python script in `main.py` to fetch data from your desired source.
 
